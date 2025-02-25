@@ -6,7 +6,7 @@
 #    By: olarseni <olarseni@student.42madrid.c      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/20 20:39:53 by olarseni          #+#    #+#              #
-#    Updated: 2025/02/21 21:40:00 by olarseni         ###   ########.fr        #
+#    Updated: 2025/02/24 23:26:42 by olarseni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,11 @@ NAME	=	philo
 
 # Sources with VPATH
 VPATH	=	srcs
-SRCS	=	main.c		\
-			valid_args.c
+SRCS	=	main.c			\
+			valid_args.c	\
+			utils.c			\
+			init_data.c		\
+			destroy_data.c
 
 # Objects
 ODIR	=	objects
