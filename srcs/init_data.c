@@ -6,7 +6,7 @@
 /*   By: olarseni <olarseni@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 23:23:44 by olarseni          #+#    #+#             */
-/*   Updated: 2025/02/25 00:58:02 by olarseni         ###   ########.fr       */
+/*   Updated: 2025/02/26 00:53:56 by olarseni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,10 +92,9 @@ t_data	*init_data(int argc, char **argv)
 		data->n_eats = -1;
 	data->forks = NULL;
 	data->philos = NULL;
-	if(!init_forks_philos(data))
+	if (!init_forks_philos(data))
 		return (NULL);
 	if (pthread_mutex_init(&data->death, NULL))
 		return (destroy_data(data), NULL);
 	return (data);
 }
-

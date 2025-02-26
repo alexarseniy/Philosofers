@@ -6,7 +6,7 @@
 /*   By: olarseni <olarseni@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 23:24:37 by olarseni          #+#    #+#             */
-/*   Updated: 2025/02/24 23:32:22 by olarseni         ###   ########.fr       */
+/*   Updated: 2025/02/26 00:56:06 by olarseni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,6 @@ void	destroy_forks(t_mutex *forks, int n)
 	free(forks);
 }
 
-void	destroy_philos(t_philo *philos, int n)
-{
-	while (n)
-	{
-		pthread_mutex_destroy(&philos[n - 1].death);
-		n--;
-	}
-	free(philos);
-}
-
 void	destroy_data(t_data *data)
 {
 	int	i;
@@ -44,7 +34,7 @@ void	destroy_data(t_data *data)
 	i = 0;
 	if (data->philos)
 	{
-		destroy_philos(data->philos, data->n_philos);
+		free(data->philos);
 		data->philos = NULL;
 	}
 	pthread_mutex_destroy(&data->print);

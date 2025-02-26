@@ -6,7 +6,7 @@
 #    By: olarseni <olarseni@student.42madrid.c      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/11/20 20:39:53 by olarseni          #+#    #+#              #
-#    Updated: 2025/02/24 23:26:42 by olarseni         ###   ########.fr        #
+#    Updated: 2025/02/26 00:46:20 by olarseni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,9 @@ SRCS	=	main.c			\
 			valid_args.c	\
 			utils.c			\
 			init_data.c		\
-			destroy_data.c
+			destroy_data.c  \
+			routine.c		\
+			monitoring.c
 
 # Objects
 ODIR	=	objects

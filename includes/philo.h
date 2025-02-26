@@ -6,7 +6,7 @@
 /*   By: olarseni <olarseni@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 23:15:18 by olarseni          #+#    #+#             */
-/*   Updated: 2025/02/25 00:54:48 by olarseni         ###   ########.fr       */
+/*   Updated: 2025/02/26 00:50:01 by olarseni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,23 @@
 # include <pthread.h>
 # include <sys/time.h>
 
+# define SFORK "takes a fork🍴"
+# define SEAT "is eating🍝😛"
+# define SSLEEP "is sleeping😴"
+# define STHINK "is thinking🎓"
+# define SDIE "is dead💩👻"
+
 typedef pthread_mutex_t	t_mutex;
 typedef pthread_t		t_thread;
+
+typedef enum e_action
+{
+	FORK = 0,
+	EAT,
+	SLEEP,
+	THINK,
+	DIE
+}	t_enum;
 
 typedef struct s_philo
 {
@@ -57,5 +72,9 @@ void	destroy_forks(t_mutex *forks, int n);
 void	destroy_philos(t_philo *philos, int n);
 size_t	ft_atos(char *s);
 size_t	get_time(void);
+void	*routine(void *arg);
+void	*monitoring(void *arg);
+bool	is_over(t_data *data);
+void	action(int action, char *s, t_philo *philo);
 
 #endif
